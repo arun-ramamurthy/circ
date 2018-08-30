@@ -25,3 +25,12 @@ test_that("negative N throws an exception", {
   expect_error(rcirc(str),
                "`N` must be a non-negative integer.+")
 })
+
+test_that("vector-valued N throws an exception", {
+  str <- "statistics"
+  N <- c(1, 1)
+  expect_error(lcirc(str),
+               "`N` must be a non-negative integer.+")
+  expect_error(rcirc(str),
+               "`N` must be a non-negative integer.+")
+})
