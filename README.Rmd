@@ -15,8 +15,13 @@ knitr::opts_chunk$set(
 ```
 
 # circ
+[![Travis-CI Build Status](https://travis-ci.org/arun-ramamurthy/circ.svg?branch=master)](https://travis-ci.org/arun-ramamurthy/circ)
+[![Coverage Status](https://img.shields.io/codecov/c/github/arun-ramamurthy/circ/master.svg)](https://codecov.io/github/arun-ramamurthy/circ?branch=master)
 
-`circ` is a small library that implements and tests the string operators, `lcirc` & `rcirc`. The purpose of this package is to showcase the reproducibility and good software hygeine promoted and easily used by the modern wave of R programming tools.
+`circ` is a small library that implements and tests the string operators, `lcirc` & `rcirc`. The purpose of this package is to showcase the reproducibility and good software hygeine promoted by the modern wave of R programming tools.
+
+circ uses a combination of Hadley-endorsed convenience tools for R package development to form an easily accessible (i.e. installable in a single line), fully reproducible environment with automated unit and coverage testing, all hosted on Github.
+
 
 Some of the tools showcased by this package are:  
 
