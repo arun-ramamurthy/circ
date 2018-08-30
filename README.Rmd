@@ -1,0 +1,41 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# circ
+
+`circ` is a small library that implements and tests the string operators, `lcirc` & `rcirc`. The purpose of this package is to showcase the reproducibility and good software hygeine promoted and easily used by the modern wave of R programming tools.
+
+Some of the tools showcased by this package are:  
+
+- `packrat`: Self-contained package management  
+- `devtools`: Akin to `tidyverse`, but for easy R package development   
+- `usethis`: Automated tasks such as README generation, test generation, and Travis setup  
+- `testthat`: Unit testing   
+- `covr`: Coverage testing, including an API for connection with [codecov.io]()  
+- `roxygen2`: Automated documentation generation via commenting  
+
+## Examples
+
+```{r examples, eval = F}
+str <- "statistics"
+
+lcirc(str)
+lcirc(str, 3)
+
+rcirc(str, 4)
+
+str %>% lcirc(14) %>% rcirc(31) %>% lcirc(17) 
+```
