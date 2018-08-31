@@ -4,10 +4,10 @@
 \alias{lcirc}
 \title{Conduct LCIRC-N on a string.}
 \usage{
-lcirc(str, N = 1)
+lcirc(str, N = 1L)
 }
 \arguments{
-\item{str}{a string, as a character vector}
+\item{str}{one or more strings, as a character vector}
 
 \item{N}{a single non-negative integer}
 }

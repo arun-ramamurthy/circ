@@ -10,27 +10,36 @@ test_that("non-string argument throws an exception", {
 
 test_that("non-integer N throws an exception", {
   str <- "statistics"
-  N <- 4.5
-  expect_error(lcirc(str),
-               "`N` must be a non-negative integer.+")
-  expect_error(rcirc(str),
-               "`N` must be a non-negative integer.+")
+  N <- "statistics"
+  expect_error(lcirc(str, N),
+               "`N` must be a single non-negative integer.+")
+  expect_error(rcirc(str, N),
+               "`N` must be a single non-negative integer.+")
 })
 
 test_that("negative N throws an exception", {
   str <- "statistics"
   N <- -3
-  expect_error(lcirc(str),
-               "`N` must be a non-negative integer.+")
-  expect_error(rcirc(str),
-               "`N` must be a non-negative integer.+")
+  expect_error(lcirc(str, N),
+               "`N` must be a single non-negative integer.+")
+  expect_error(rcirc(str, N),
+               "`N` must be a single non-negative integer.+")
 })
 
 test_that("vector-valued N throws an exception", {
   str <- "statistics"
   N <- c(1, 1)
-  expect_error(lcirc(str),
-               "`N` must be a non-negative integer.+")
-  expect_error(rcirc(str),
-               "`N` must be a non-negative integer.+")
+  expect_error(lcirc(str, N),
+               "`N` must be a single non-negative integer.+")
+  expect_error(rcirc(str, N),
+               "`N` must be a single non-negative integer.+")
+})
+
+test_that("NA-valued N throws an exception", {
+  str <- "statistics"
+  N <- NA_integer_
+  expect_error(lcirc(str, N),
+               "`N` must be a single non-negative integer.+")
+  expect_error(rcirc(str, N),
+               "`N` must be a single non-negative integer.+")
 })

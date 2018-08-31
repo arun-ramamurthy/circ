@@ -2,3 +2,6 @@
 
 export(lcirc)
 export(rcirc)
+import(dplyr)
+import(glue)
+import(magrittr)

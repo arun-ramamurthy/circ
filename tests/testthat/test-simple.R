@@ -10,6 +10,16 @@ test_that("rcirc works once", {
                "sstatistic")
 })
 
+test_that("lcirc works more than once", {
+  expect_equal(lcirc("statistics", 3),
+               "tisticssta")
+})
+
+test_that("rcirc works more than once", {
+  expect_equal(rcirc("statistics", 3),
+               "icsstatist")
+})
+
 test_that("zero shifts are identity", {
   str <- "statistics"
   expect_equal(lcirc(str, 0),
