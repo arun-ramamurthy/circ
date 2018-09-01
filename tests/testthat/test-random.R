@@ -7,6 +7,19 @@ shuffle <- function(lst) {
   lst %>% sample(size = length(.), replace = F)
 }
 
+test_that("lcirc and rcirc cancel out when used for large N", {
+  str <- "statistics"
+  N <- sample.int(1000, size = 1)
+
+  output <-
+    str %>%
+    lcirc(N) %>%
+    rcirc(N)
+
+  expect_equal(output,
+               str)
+})
+
 test_that("lcirc and rcirc cancel out if used successively", {
   str <- "statistics"
   N <- sample.int(100, size = 1)

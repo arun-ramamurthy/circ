@@ -11,12 +11,16 @@
 #' lcirc("statistics", 3)
 #' @import magrittr
 #' @import dplyr
+#' @import purrr
 #' @export
 lcirc <- function(str, N = 1L) {
   str %<>%  check_str()
   N %<>% check_N()
 
-  return(str)
+  lcircs <- c(list(lcirc_singleton) %>% rep(N))
+  lcircs %>%
+    reduce(~ invoke(.y, .x),
+           .init = str)
 }
 
 #' Conduct RCIRC-N on a string.
@@ -30,12 +34,16 @@ lcirc <- function(str, N = 1L) {
 #' rcirc("statistics", 3)
 #' @import magrittr
 #' @import dplyr
+#' @import purrr
 #' @export
 rcirc <- function(str, N = 1L) {
   str %<>%  check_str()
   N %<>% check_N()
 
-  return(str)
+  rcircs <- c(list(rcirc_singleton) %>% rep(N))
+  rcircs %>%
+    reduce(~ invoke(.y, .x),
+           .init = str)
 }
 
 #' @import glue
@@ -55,3 +63,18 @@ check_N <- function(N) {
   if(N < 0) stop(glue("{base_error}, not a negative integer."))
   return(N)
 }
+
+#' @import stringr
+lcirc_singleton <- function(str) {
+  first <- str %>% str_sub(end = 1)
+  rest <- str %>% str_sub(start = 2)
+  paste0(rest, first)
+}
+
+#' @import stringr
+rcirc_singleton <- function(str) {
+  last <- str %>% str_sub(start = -1)
+  rest <- str %>% str_sub(end = -2)
+  paste0(last, rest)
+}
+

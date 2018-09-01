@@ -1,7 +1,7 @@
 Package: circ
 Type: Package
-Title: Circular shifting operations for strings.
-Version: 0.1.0
+Title: Circular shifting operations for strings
+Version: 1.0
 Author: Arun Ramamurthy
 Maintainer: Arun Ramamurthy <contact@arun.run>
 Description: Use the historical bitstring operators, LCIRC and RCIRC, on character strings. 
@@ -15,4 +15,6 @@ RoxygenNote: 6.1.0
 Imports:
     glue,
     magrittr,
-    dplyr
+    dplyr,
+    purrr,
+    stringr
