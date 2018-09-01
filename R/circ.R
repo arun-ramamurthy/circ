@@ -16,7 +16,7 @@ lcirc <- function(str, N = 1L) {
   str %<>%  check_str()
   N %<>% check_N()
 
-  return("statistics")
+  return(str)
 }
 
 #' Conduct RCIRC-N on a string.
@@ -35,7 +35,7 @@ rcirc <- function(str, N = 1L) {
   str %<>%  check_str()
   N %<>% check_N()
 
-  return("statistics")
+  return(str)
 }
 
 #' @import glue
